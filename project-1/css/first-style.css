@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap');
+
+    :root{
+        --success-color: limegreen;
+        --error-color:orangered;
+    }
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #eeeef6ef;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* viewport height   */
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container{
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    width: 450px;
+}
+h2{
+    text-align: center;
+}
+
+form{
+    padding: 30px 40px;
+}
+.form-control{
+    margin-bottom: 1px;
+    padding-bottom: 20px;
+    position: relative;
+}
+.form-control label{
+    color:gray;
+    display: block;
+    margin-bottom: 2px;
+}
+input{
+    border: 3px solid lightgray;
+    border-radius: 5px;
+ 
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+}
+#submit{
+    background-color: #006400;
+    border-radius: 15px;
+}
+
+.form-control input:focus{
+    outline: 0;
+    border-color: rgb(143, 143, 255);
+    border-radius: 10px;
+    background-color: rgb(245, 245, 245);
+
+}
+
+img{
+    height: 150px;
+    width: 150px;
+    border: solid 2px;
+    border-radius: 100px;
+    margin-left: 140px;
+    /* position: relative; */
+    box-shadow: 0 2px 10px rgba(1, 3, 1, 2);
+    position: relative;
+    animation: mymove infinite;
+    animation-duration: 2s;
+}
+@keyframes mymove{
+    form{top : 0px;}
+    to{left : 5px;}
+}
+
+button{
+    cursor: pointer;
+    width: 100%;
+    height: 30px;
+    color: rgb(255, 0, 98);
+    background-color: rgb(40, 39, 53);
+    border-radius: 6px;
+}
+.form-control small{
+    color: var(--error-color);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+}
+.form-control.success input{
+    border-color: var(--success-color);
+}
+.form-control.error input{
+    border-color: var(--error-color);
+}
+.form-control.error small{
+    visibility: visible;
+}
