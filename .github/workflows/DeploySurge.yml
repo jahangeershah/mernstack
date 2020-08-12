@@ -32,4 +32,4 @@ jobs:
 
       # Deploy App to Surge
     - name: Deploy Project to Surge
-      run : surge ./ jahangeershah_mernstack.surge.sh --token ${{ secrets.MERNSTACK_PROJECT1_SECRET}}
+      run : surge ./ jahangeershah.surge.sh --token ${{ secrets.MERNSTACK_PROJECT1_SECRET}}
