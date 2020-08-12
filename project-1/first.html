@@ -12,20 +12,21 @@
         
         <caption ><h2 style="text-decoration: underline;">Contact Us form</h2></caption>
         <img src="jahangeer.png" alt="profile-picture">
-        <form action="" class="form">
-            <div class="form-control error" >
+        <!-- start of the form -->
+        <form action="" class="form" id="form">
+            <div  >
                 <label for="username">Username</label>
-                <input type="text" id="username" placeholder="First Name" > <br>
+                <input type="text" id="Username" placeholder="First Name" > <br>
                 <small>Erro message</small>
             </div>
-            <div class="form-control success ">
+            <div >
                 <label for="Email">Username</label>
-                <input type="email" id="email" placeholder="Enter Email" > <br>
+                <input type="email" id="Email" placeholder="Enter Email" > <br>
                 <small>Erro message</small>
             </div>
             <div class="form-control">
                 <label for="password">Password</label>
-                <input type="text" id="password" placeholder="your Password"> <br>
+                <input type="text" id="Password" placeholder="your Password"> <br>
                 <small>Erro message</small>
             </div>
             <div class="form-control">
@@ -33,16 +34,20 @@
                 <input type="text" id="Confirm-Password" placeholder="confirm password"> <br>
                 <small>Erro message</small>
             </div>
-            <div class="form-control">
-                <input type="submit" id="submit" value="Submit">
-            </div>
+           
+                <button  id="submit">Submit</button>
+            
         </form>
             <!-- Redirect to home page: -->
-    <div>
-        <a href="../index.html" style="background-color: green;"><button>Home</button></a>
-    </div>
+        <div>
+            <a href="../index.html" style="background-color: green;"><button>Home</button></a>
+        </div>
 
     </div>
 
+
+<script src="js/main.js"></script>
 </body>
 </html>
+
+
