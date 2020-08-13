@@ -22,34 +22,29 @@ function isEmailValid(email){
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
 }
-
-function getFieldId(input){
-    return  input.id.charAt([0]).toUpperCase() + input.id.slice(1);
-}
-function fieldCheckRequired(inputArray){
-    inputArray.forEach(function (input) {
-        if(input.value==''){
-            console.log(input.id);
-            // ShowError(input,input.id + 'is required') ;
-             ShowError(input,`${getFieldId(input)}` + ' is required') ;
-        }else{
-            showSuccess(input);
-        }  
-    })
-}
-function checkLength(input,min,max){
-    if(input.value.length< min){
-        ShowError(input,`${getFieldId(input)} is required atleast ${min} long`);
-    }else if (input.value.length > max){
-        ShowError(input,'maximum 10 required ');
-    }else{
-        showSuccess(input);
-    }
-}
-
 form.addEventListener('submit',function(e){
     e.preventDefault();
-    fieldCheckRequired([Username,Email,Password,Password2]);
-    checkLength(Username,3,10);
-    checkLength(Password,6,10);
+    if(Username.value == ''){
+        ShowError(Username,'Username required');
+    }else{
+        showSuccess(Username)
+    }
+    if(Email.value == ''){
+        ShowError(Email,'Email required');
+    }else if (!isEmailValid(Email.value)){
+        ShowError(Email,'Email not valid');
+    
+    }else{
+        showSuccess(Email)
+    }
+    if(Password.value == ''){
+        ShowError(Password,'Password  required');
+    }else{
+        showSuccess(Password)
+    }
+    if(Password2.value == ''){
+        ShowError(Password2,'Password required');
+    }else{
+        showSuccess(Password2)
+    }
 })
