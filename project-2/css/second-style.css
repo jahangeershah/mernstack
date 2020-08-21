@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
-    /* :root{
+:root{
         --success-color: limegreen;
         --error-color:orangered;
     }
@@ -10,16 +10,16 @@
 }
 
 body{
-    background-color: #eeeef6ef;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #6b6bb3ef;
+    font-family: 'Lato', sans-serif;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     /* viewport height   */
     min-height: 100vh;
     margin: 0;
-} */
-#container{
-    background-color:#3A4A4D;
-}
+    color:white
+} 
+
 
