@@ -4,111 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/third-style.css">
+    <link rel="stylesheet" href="css/progress.css">
     <title>HTML Css </title>
 </head>
 <body>
-<!-- selection of movies area -->
-    <div id="container" class="movie-container">
-        <label for="movie">Please select any movie</label>
-        <select name="" id="movie">
-            <option value="15">The One and Only Ivan 15$</option>
-            <option value="15">the 24th 15$</option>
-            <option value="10">Rogue 10$</option>
-            <option value="20">Ava 20$</option>
-        </select>
-    </div> 
-<!-- seat availability area  -->
-    <div class="lagend">
-        <ul>
-            <li>
-                <div class="seat"></div>
-                <small>Available</small>
-            </li>
-            <li>
-                <div class="seat selected"></div>
-                <small>Selected</small>
-            </li>
-            <li>
-                <div class="seat occupied"></div>
-                <small>Accupied</small>
-            </li>
-        </ul>
-    </div>
-<!-- number of seats in theater  -->
-    <div class="container">
-        <div class="screen">
-            <iframe width="220" height="110" src="https://www.youtube-nocookie.com/embed/I-uIQDRS4a8?start=2" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <h1>Video Palyer</h1>
+        <video src="assets/videos/pakistan.mp4" id="video" class="screen" poster="assets/images/poster.jpg"  ></video>
+        <div class="controls">
+            <button class="btn" id="play">
+                <li class="fas fa-play fa-2x"></li>
+            </button>
+            <button class="btn" id="stop">
+                <li class="fas fa-stop fa-2x"></li>
+            </button>
+            <input type="range" id="progress" min="0" max="100" value="0"  step="0.1">
+            <span class="timestamp" class="timestamp">00:00</span>
+        </div>
 
-        </div>
-        <div class="row">
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-        </div>
-        <div class="row">
-            <div class="seat"></div>
-            <div class="seat occupied"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat occupied"></div>
-            <div class="seat occupied"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-        </div>
-        <div class="row">
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat occupied"></div>
-            <div class="seat"></div>
-            <div class="seat occupied"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-        </div>
-        <div class="row">
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat occupied"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat occupied"></div>
-            <div class="seat"></div>
-        </div>
-        <div class="row">
-            <div class="seat"></div>
-            <div class="seat occupied"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-        </div>
-        <div class="row">
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-        </div>
-    </div>
-
-    <p class="text">
-        you have selected <span id="count">0</span> seats fro a total price of $ <span id="total">0</span>
-    </p>
-
-    <button><a href="..">Home</a></button>
 
 <script src="js/main.js"></script>
+<script src="https://kit.fontawesome.com/75a1e34e11.js" crossorigin="anonymous"></script>
 </body>
 </html>
 
