@@ -17,6 +17,7 @@ const volumeControls = document.getElementById('volume');
 // forward and backword 5 seconds
 // full screen function
 function toggleFullScreen(){
+    // video.classList.toggle('full');
 	if(video.requestFullScreen){
 		video.requestFullScreen();
 	} else if(video.webkitRequestFullScreen){
