@@ -9,7 +9,9 @@
 </head>
 <body>
         <h1>Video Palyer</h1>
-        <video src="assets/videos/pakistan.mp4" id="video" class="screen" poster="assets/images/poster.jpg"  ></video>
+        <video src="assets/videos/pakistan.mp4" id="video" class="screen" poster="assets/images/poster.jpg"  >
+            
+        </video>
         <div class="controls">
             <button class="btn" id="play">
                 <li class="fas fa-play fa-2x"></li>
@@ -19,14 +21,17 @@
                 <li class="fas fa-stop fa-2x"></li>
             </button>
             <input type="range" id="progress" min="0" max="100" value="0"  step="0.1">
-            <button class="btn">
-                <i class="fas fa-volume-up fa-2x " id="volume"></i>
+            <button class="btn" id="volume">
+                <!-- <i class="fas fa-volume-mute fa-2x " ></i> -->
+                <i class="fas fa-volume-up fa-2x"></i>
+                <!-- <i class="fas fa-volume-off"></i> -->
+                
                 <!-- <i class="fas fa-volume-mute fa-2x"></i> -->
             </button >
-            <button class="btn">
-                <i class="fas fa-cog fa-2x" id="quality"></i>
+            <!-- <button class="btn"> -->
+                <!-- <i class="fas fa-cog fa-2x" id="quality"></i> -->
                 <!-- <i class="fas fa-volume-mute fa-2x"></i> -->
-            </button>
+            <!-- </button> -->
             
             <span class="timestamp" class="timestamp">00:00</span>
 

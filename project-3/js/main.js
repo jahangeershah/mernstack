@@ -1,3 +1,7 @@
+{/* <script src="https://vjs.zencdn.net/7.8.4/video.js"></script> */}
+
+// const videojs = document.querySelector('.video');
+
 const video = document.getElementById('video');
 const  stop = document.getElementById('stop');
 // const pause = document.getElementById('pause');
@@ -5,6 +9,7 @@ const play = document.getElementById('play');
 const progressBar = document.getElementById('progress');
 const volume = document.getElementById('volume');
 const fullScreen = document.getElementById('fullScreen')
+const volumeControls = document.getElementById('volume');
 
 
 
@@ -18,9 +23,11 @@ function toggleFullScreen(){
 		video.webkitRequestFullScreen();
 	} else if(video.mozRequestFullScreen){
 		video.mozRequestFullScreen();
-	}
+    }
+    // videojs.FullscreenToggle();
 }
 // 
+
 
 
 
@@ -81,8 +88,26 @@ function stopVideo(){
 
 function setProgress(){
    video.currentTime = progressBar.value * video.duration /100 ;
-   
 
+}
+
+function volumeIconUpdate(){
+    if(video.muted==false){
+        volumeControls.innerHTML = '<i class="fas fa-volume-up fa-2x"></i>'; 
+    }else{
+        volumeControls.innerHTML = '<i class="fas fa-volume-mute fa-2x"></i>'; 
+
+    }
+}
+// volume controls Mute and Unmute
+function toggleVolume(){
+    if(video.muted){
+        video.muted = false;
+        volumeIconUpdate();
+    }else{
+        video.muted = true;
+        volumeIconUpdate();
+    }
 }
 
 
@@ -104,4 +129,5 @@ stop.addEventListener('click',stopVideo);
 // 7- progress Bar - change position to change of playback
 progressBar.addEventListener('change',setProgress);
 fullScreen.addEventListener('click',toggleFullScreen);
+volumeControls.addEventListener('click',toggleVolume);
 
