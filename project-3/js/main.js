@@ -12,11 +12,13 @@ const fullScreen = document.getElementById('fullScreen')
 // forward and backword 5 seconds
 // full screen function
 function toggleFullScreen(){
-    if (video.mozRequestFullScreen) {
-        video.mozRequestFullScreen();
-      } else if (video.webkitRequestFullScreen) {
-        video.webkitRequestFullScreen();
-      } 
+	if(video.requestFullScreen){
+		video.requestFullScreen();
+	} else if(video.webkitRequestFullScreen){
+		video.webkitRequestFullScreen();
+	} else if(video.mozRequestFullScreen){
+		video.mozRequestFullScreen();
+	}
 }
 // 
 
