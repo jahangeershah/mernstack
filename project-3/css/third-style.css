@@ -37,11 +37,24 @@ body{
     background: transparent;
     cursor: pointer;
 }
+.btn:focus{
+    outline:0;
+} 
 .fa-play {
     color: green;
 }
 .fa-stop{
     color:red;
+}
+.fa-volume-up{
+    border:0;
+    background: transparent;
+    margin-left: 5px;
+}
+span.timestamp{
+    color: white;
+    font-weight: bold;
+    padding-left: 5px;
 }
 @media(max-width : 800px){
     .screen , .controls{
