@@ -4,6 +4,15 @@ const  stop = document.getElementById('stop');
 const play = document.getElementById('play');
 const progressBar = document.getElementById('progress');
 const volume = document.getElementById('volume');
+const fullScreen = document.getElementById('fullScreen')
+
+
+
+// video quality controls
+// forward and backword 5 seconds
+// full screen
+// 
+
 
 
 
@@ -14,7 +23,6 @@ const volume = document.getElementById('volume');
 function toggleVideo(){
     if(video.paused){
         video.play();
-        
     }else{
         video.pause();
     }
@@ -35,6 +43,22 @@ function UpdateIcon(){
 // 3- update Progress bar and the position of the bar
 function updateProgress(){
     progressBar.value = video.currentTime/video.duration*100;
+    // sepreting minutes only
+    let Minutes = Math.floor(video.currentTime / 60) ;
+    if(Minutes<10 ){
+        Minutes = `0${Minutes}`;
+    }
+    // sperating seconds 
+    let Seconds = Math.floor(video.currentTime % 60);
+    if(Seconds<10 ){
+        Seconds = `0${Seconds}`;
+    }
+
+    document.querySelector('.timestamp').innerHTML = `${Minutes}:${Seconds}`;
+    console.log(Seconds)
+
+
+
 }
 
 // 4- stop the the video and reset to zero
@@ -47,7 +71,9 @@ function stopVideo(){
 // 5- setProgress change the video frames if progress bar has moved
 
 function setProgress(){
-    return true;
+   video.currentTime = progressBar.value * video.duration /100 ;
+   
+
 }
 
 

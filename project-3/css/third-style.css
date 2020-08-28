@@ -7,7 +7,7 @@
 }
 
 body{
-    background-color: lightgray;
+    background-color: rgb(116, 192, 211);
     font-family: 'Lato', 'sans-serif';
     display: flex;
     flex-direction: column;
@@ -21,6 +21,7 @@ body{
 .screen{
     cursor: pointer;
     width: 60%;
+    border-radius: 5px;
     background-color: black !important;  
 }
 .controls{
@@ -47,17 +48,21 @@ body{
     color:red;
 }
 .fa-volume-up{
-
+    color: yellow;
     margin-left: 5px;
 }
 .fa-cog{
-
-    color: pink;
+ color:white;
+}
+.fa-expand{
+    color: white;
+    margin-left: 5px;
 }
 span.timestamp{
     color: white;
-    font-weight: bold;
-    padding-left: 5px;
+    /* font-weight: bold; */
+    /* padding: 10px; */
+    /* margin: 10px; */
 }
 @media(max-width : 800px){
     .screen , .controls{
