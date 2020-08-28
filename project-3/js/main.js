@@ -10,7 +10,14 @@ const fullScreen = document.getElementById('fullScreen')
 
 // video quality controls
 // forward and backword 5 seconds
-// full screen
+// full screen function
+function toggleFullScreen(){
+    if (video.mozRequestFullScreen) {
+        video.mozRequestFullScreen();
+      } else if (video.webkitRequestFullScreen) {
+        video.webkitRequestFullScreen();
+      } 
+}
 // 
 
 
@@ -94,4 +101,5 @@ play.addEventListener('click',toggleVideo);
 stop.addEventListener('click',stopVideo);
 // 7- progress Bar - change position to change of playback
 progressBar.addEventListener('change',setProgress);
+fullScreen.addEventListener('click',toggleFullScreen);
 
