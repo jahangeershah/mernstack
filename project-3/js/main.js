@@ -1,6 +1,6 @@
 const video = document.getElementById('video');
 const  stop = document.getElementById('stop');
-const pause = document.getElementById('pause');
+// const pause = document.getElementById('pause');
 const play = document.getElementById('play');
 const progressBar = document.getElementById('progress');
 const volume = document.getElementById('volume');
@@ -12,26 +12,36 @@ const volume = document.getElementById('volume');
 // pause the video if playing 
 // play the video if paused
 function toggleVideo(){
-   return true; 
+    if(video.paused){
+        video.play();
+        
+    }else{
+        video.pause();
+    }
 }
 
 
 // 2- Update Icon
 
 function UpdateIcon(){
-    return true;
+    if(video.paused){
+        play.innerHTML = '<li class="fa fa-play fa-2x"></li>';
+    }else{
+        play.innerHTML = '<li class="fa fa-pause fa-2x"></li>';
+    }
 
 }
 
 // 3- update Progress bar and the position of the bar
 function updateProgress(){
-    return true;
+    progressBar.value = video.currentTime/video.duration*100;
 }
 
 // 4- stop the the video and reset to zero
 function stopVideo(){
-   
-    return true;
+    video.pause();
+    video.currentTime =0;
+    UpdateIcon();
 }
 
 // 5- setProgress change the video frames if progress bar has moved

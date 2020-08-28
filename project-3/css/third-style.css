@@ -47,9 +47,12 @@ body{
     color:red;
 }
 .fa-volume-up{
-    border:0;
-    background: transparent;
+
     margin-left: 5px;
+}
+.fa-cog{
+
+    color: pink;
 }
 span.timestamp{
     color: white;
