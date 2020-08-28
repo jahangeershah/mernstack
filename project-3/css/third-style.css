@@ -74,6 +74,16 @@ span.timestamp{
     /* padding: 10px; */
     /* margin: 10px; */
 }
+#button-home{
+    cursor: pointer;
+    width: 200%;
+    height: 40px;
+    text-align: center;
+    /* color: rgb(255, 0, 98); */
+    /* background-color: rgb(40, 39, 53); */
+    background-color: rgb(116, 141, 116);
+    border-radius: 6px;
+}
 @media(max-width : 800px){
     .screen , .controls{
         width: 90%;
