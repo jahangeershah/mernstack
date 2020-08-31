@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #6b6bb3ef;
+    font-family: 'Lato', 'sans-serif';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* viewport height   */
+    min-height: 100vh;
+    margin: 0;
+    color:white
+} 
+.container{
+    background-color: rgb(180, 135, 223);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+
+}
+.fa-couch.selected{
+    color:rgb(61, 216, 255)
+}
+.movie-container{
+    margin: 20px 0;
+}
+.movie-container select{
+    background-color: white;
+    border: 0;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-left: 10px;
+    padding: 10px 5px 10px 5px;
+    appearance: none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+}
+/* .seat{
+    background-color: darkgray;
+    height: 12px;
+    width: 15px;
+    margin: 3px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+} */
+.fa-couch{
+    margin-left: 5px;
+    color: rgba(0, 0, 0, 0.787);
+}
+/* .fa-couch.selected{
+  background-color: rgb(255, 0, 157);
+} */
+
+/* background color of occupied seats */
+.fa-couch.occupied{
+    color: rgb(119, 42, 11);
+}
+/* give space from left side and right side */
+.fa-couch:nth-of-type(2){
+    margin-right: 20px;
+}
+.fa-couch:nth-last-of-type(2){
+    margin-left:20px
+}
+/* */
+.fa-couch:not(.occupied):hover{
+    cursor: pointer;
+    transform: scale(1.2); 
+    color: rgba(255, 255, 255, 0.822);  
+}
+
+
+.lagend .seat:not(.occupied):hover{
+    cursor: default;
+    transform: scale(1.0);
+}
+.lagend{
+    background-color:rgba(0,0,0,0.1);
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: lightgray;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.lagend li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.screen{
+    background-color: white;
+    height:200px;
+    widows: 100%;
+    border-radius: 5px;
+    margin: 15px 0 15px 0;
+    transform: rotatex(-50deg);
+    box-shadow: 0 3px 10px rgba(255,255,255,0.19);
+
+}
+.container{
+    perspective: 1000px;
+    margin-bottom: 30px;
+}
+
+p.text{
+    margin: 5px 0;
+}
+p.text span{
+    color: aqua;
+}
+
+
+
+
+
+
+.row{
+    display: flex;
+}
+
+
+/* 1:06 min watched video */

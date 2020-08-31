@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/second-style-link.css">
+    <title>HTML Css </title>
+</head>
+<body>
+<!-- selection of movies area -->
+    <div id="container" class="movie-container">
+        <label for="movie">Please select any movie</label>
+        <select name="" id="movie">
+            <option value="15">The One and Only Ivan 15$</option>
+            <option value="15">the 24th 15$</option>
+            <option value="10">Rogue 10$</option>
+            <option value="20">Ava 20$</option>
+        </select>
+    </div> 
+<!-- seat availability area  -->
+    <div class="lagend">
+        <ul>
+            <li>
+                <div class="seat"></div>
+                <small>Available</small>
+            </li>
+            <li>
+                <div class="seat selected"></div>
+                <small>Selected</small>
+            </li>
+            <li>
+                <div class="seat occupied"></div>
+                <small>Accupied</small>
+            </li>
+        </ul>
+    </div>
+<!-- number of seats in theater  -->
+    <div class="container">
+        <div class="screen">
+            <iframe width="395" height="200" src="https://www.youtube-nocookie.com/embed/I-uIQDRS4a8?start=2" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        </div>
+        <div class="row">
+            <div class="fas fa-couch fa-2x selected"></div>
+            <div class="fas fa-couch fa-2x"></div>
+            <div class="fas fa-couch fa-2x"></div>
+            <div class="fas fa-couch fa-2x"></div>
+            <div class="fas fa-couch fa-2x"></div>
+            <div class="fas fa-couch fa-2x"></div>
+            <div class="fas fa-couch fa-2x"></div>
+            <div class="fas fa-couch fa-2x"></div>
+        </div>
+        <div class="row">
+            <div class="fas fa-couch fa-2x"></div>
+            <div class="fas fa-couch fa-2x occupied"></div>
+            <div class="fas fa-couch fa-2x"></div>
+            <div class="fas fa-couch fa-2x"></div>
+            <div class="fas fa-couch fa-2x occupied"></div>
+            <div class="fas fa-couch fa-2x occupied"></div>
+            <div class="fas fa-couch fa-2x"></div>
+            <div class="fas fa-couch fa-2x"></div>
+        </div>
+        <div class="row">
+            <div class="fas fa-couch fa-2x"></div>
+            <div class="fas fa-couch fa-2x"></div>
+            <div class="fas fa-couch fa-2x occupied"></div>
+            <div class="fas fa-couch fa-2x"></div>
+            <div class="fas fa-couch fa-2x occupied"></div>
+            <div class="fas fa-couch fa-2x"></div>
+            <div class="fas fa-couch fa-2x"></div>
+            <div class="fas fa-couch fa-2x"></div>
+        </div>
+        <div class="row">
+            <div class="fas fa-couch fa-2x"></div>
+            <div class="fas fa-couch fa-2x"></div>
+            <div class="fas fa-couch fa-2x occupied"></div>
+            <div class="fas fa-couch fa-2x"></div>
+            <div class="fas fa-couch fa-2x"></div>
+            <div class="fas fa-couch fa-2x"></div>
+            <div class="fas fa-couch fa-2x occupied"></div>
+            <div class="fas fa-couch fa-2x"></div>
+        </div>
+        <div class="row">
+            <div class="fas fa-couch fa-2x"></div>
+            <div class="fas fa-couch fa-2x occupied"></div>
+            <div class="fas fa-couch fa-2x"></div>
+            <div class="fas fa-couch fa-2x"></div>
+            <div class="fas fa-couch fa-2x"></div>
+            <div class="fas fa-couch fa-2x"></div>
+            <div class="fas fa-couch fa-2x"></div>
+            <div class="fas fa-couch fa-2x"></div>
+        </div>
+        <div class="row">
+            <div class="fas fa-couch fa-2x"></div>
+            <div class="fas fa-couch fa-2x"></div>
+            <div class="fas fa-couch fa-2x"></div>
+            <div class="fas fa-couch fa-2x"></div>
+            <div class="fas fa-couch fa-2x"></div>
+            <div class="fas fa-couch fa-2x"></div>
+            <div class="fas fa-couch fa-2x"></div>
+            <div class="fas fa-couch fa-2x"></div>
+        </div>
+    </div>
+
+    <p class="text">
+        you have selected <span id="count">0</span> seats fro a total price of $ <span id="total">0</span>
+    </p>
+
+    <div id="Home-reset-buttons">
+    <button><a href="..">Home</a></button> 
+    <button><a href="second.html">Reset</a></button>
+    </div>
+<script src="https://kit.fontawesome.com/75a1e34e11.js" crossorigin="anonymous"></script>
+<script src="js/main-link.js"></script>
+</body>
+</html>
+
+
