@@ -76,13 +76,24 @@ body{
     color: rgba(255, 255, 255, 0.822);  
 }
 
+.lagend{
+    background-color:gray;
+    border-radius: 5px;
+}
+.fa-couch:hover{
+    cursor:default;
+}
+.lagend li{
+    list-style: none;
+    padding: 5px;
+}
 
-.lagend .seat:not(.occupied):hover{
+/* .lagend.fa-couch:hover{
     cursor: default;
     transform: scale(1.0);
 }
 .lagend{
-    background-color:rgba(0,0,0,0.1);
+    background-color:rgba(0, 0, 0, 0.1);
     padding: 5px 10px;
     border-radius: 5px;
     color: lightgray;
@@ -95,8 +106,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    
-}
+     */
 .screen{
     background-color: white;
     height:200px;
