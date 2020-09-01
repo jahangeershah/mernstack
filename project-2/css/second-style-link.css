@@ -46,7 +46,7 @@ body{
 }
 .movie-container label{
     color: black;
-    
+
 }
 .movie-container{
     margin: 20px 0;
@@ -120,14 +120,7 @@ body{
     margin: 5px;
 }
 
-.lagend li{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.lagend small{
-    margin-left: 2px;
-}
+
 
 
 
