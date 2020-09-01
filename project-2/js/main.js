@@ -2,7 +2,6 @@
 const screenDispaly = document.getElementById('display-screen');
 const container = document.querySelector('.container');
 const seats = document.querySelectorAll('.row.seat:not(.occupied)');
-
 const  count = document.getElementById('count');
 const total = document.getElementById('total');
 const movieSelect =document.getElementById('movie');
@@ -14,17 +13,17 @@ function updateMovieTrailer(movieValue){
     switch(movieValue){
         case 5:
 
-            screenDispaly.innerHTML= '<iframe width="220" height="110" src="https://www.youtube-nocookie.com/embed/I-uIQDRS4a8?start=2" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+            screenDispaly.innerHTML= '<iframe width="225" height="125" src="https://www.youtube-nocookie.com/embed/I-uIQDRS4a8?start=2" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
             break
         case 10:
-            screenDispaly.innerHTML='<iframe width="220" height="110" src="https://www.youtube.com/embed/n4YXauObskA?start=9" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+            screenDispaly.innerHTML='<iframe width="225" height="125" src="https://www.youtube.com/embed/n4YXauObskA?start=9" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
 
             break;
         case 15:
-            screenDispaly.innerHTML= '<iframe width="220" height="110" src="https://www.youtube.com/embed/M_XTnCam1Eg?start=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+            screenDispaly.innerHTML= '<iframe width="225" height="125" src="https://www.youtube.com/embed/M_XTnCam1Eg?start=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
             break;    
         case 20:
-            screenDispaly.innerHTML= '<iframe width="220" height="110" src="https://www.youtube.com/embed/eLEwNo78f0k?start=7" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+            screenDispaly.innerHTML= '<iframe width="225" height="125" src="https://www.youtube.com/embed/eLEwNo78f0k?start=7" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
             break;
     }
 }
