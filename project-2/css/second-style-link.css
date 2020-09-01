@@ -25,8 +25,28 @@ body{
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 
 }
+.screen{
+    background-color: white;
+    height:150px;
+    /* width: 80%; */
+    widows: 40%;
+    border-radius: 5px;
+    margin: 10px 0 15px 0;
+    transform: rotatex(-60deg);
+
+    box-shadow: 0 3px 10px rgba(255,255,255,0.19);
+
+}
+.container{
+    perspective: 1000px;
+    margin-bottom: 30px;
+}
 .fa-couch.selected{
     color:rgb(61, 216, 255)
+}
+.movie-container label{
+    color: black;
+    text-justify: auto;
 }
 .movie-container{
     margin: 20px 0;
@@ -37,7 +57,7 @@ body{
     border-radius: 5px;
     font-size: 14px;
     margin-left: 10px;
-    padding: 10px 5px 10px 5px;
+    padding: 5px 5px 5px 5px;
     appearance: none;
     -moz-appearance:none;
     -webkit-appearance:none;
@@ -54,9 +74,7 @@ body{
     margin-left: 5px;
     color: rgba(0, 0, 0, 0.787);
 }
-/* .fa-couch.selected{
-  background-color: rgb(255, 0, 157);
-} */
+
 
 /* background color of occupied seats */
 .fa-couch.occupied{
@@ -76,10 +94,7 @@ body{
     color: rgba(255, 255, 255, 0.822);  
 }
 
-.lagend{
-    background-color:gray;
-    border-radius: 5px;
-}
+
 .fa-couch:hover{
     cursor:default;
 }
@@ -88,39 +103,33 @@ body{
     padding: 5px;
 }
 
-/* .lagend.fa-couch:hover{
-    cursor: default;
+
+.lagend .fa-couch:hover{
+    cursor: none;
     transform: scale(1.0);
 }
+
 .lagend{
-    background-color:rgba(0, 0, 0, 0.1);
+    background-color:rgb(151, 118, 160);
     padding: 5px 10px;
     border-radius: 5px;
     color: lightgray;
     list-style-type: none;
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    margin: 5px;
 }
 
 .lagend li{
     display: flex;
     align-items: center;
     justify-content: center;
-     */
-.screen{
-    background-color: white;
-    height:200px;
-    widows: 100%;
-    border-radius: 5px;
-    margin: 15px 0 15px 0;
-    transform: rotatex(-50deg);
-    box-shadow: 0 3px 10px rgba(255,255,255,0.19);
+}
+.lagend small{
+    margin-left: 2px;
+}
 
-}
-.container{
-    perspective: 1000px;
-    margin-bottom: 30px;
-}
+
 
 p.text{
     margin: 5px 0;
