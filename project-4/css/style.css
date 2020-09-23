@@ -9,7 +9,7 @@
 body{
     margin: 0;
     padding: 20px;
-    background-color: rgb(90,111,163);
+    background-color:rgb(24,45,133);
     font-family: Georgia, 'Times New Roman', Times, serif;
     display: flex;
     flex-direction: column;
@@ -20,13 +20,14 @@ body{
 h1{
     color: var(--primary-color);
     text-align: center;
+    border-bottom: 2px dashed white;
 
 }
 p{
     color: white;
     text-align: center;
 }
-.btn{
+/* .btn{
     background: var(--primary-color);
     color: black;
     cursor: pointer;
@@ -34,6 +35,17 @@ p{
     font-size:12px;
     padding: 10px 30px;
     border: 1px solid var(--primary-color);
+} */
+.btn {
+    /* width: 50px; */
+    border-radius: 10px;
+    background-color: var(--primary-color);
+}
+.btn img{
+    width: 40px;
+}
+.btn img:hover{
+    outline: 0;
 }
 .currency-image{
     width: 200px;
