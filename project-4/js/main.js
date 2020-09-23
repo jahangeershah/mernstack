@@ -30,7 +30,7 @@ currTwoPicker.addEventListener('input',calculate);
 
 // fetch exchange rate from 3rd api 
 function calculate(){
-
+    alert('you have changed the currency')
 }
 calculate();
 
