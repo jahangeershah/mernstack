@@ -44,8 +44,12 @@ p{
 .btn img{
     width: 40px;
 }
-.btn img:hover{
+.btn:hover{
     outline: 0;
+}
+#Home{
+    background-color: #green;
+    cursor:pointer;
 }
 .currency-image{
     width: 200px;
