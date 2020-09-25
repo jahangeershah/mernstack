@@ -1,134 +1,63 @@
-{/* <script src="https://vjs.zencdn.net/7.8.4/video.js"></script> */}
+// https://randomuser.me/api
+const main = document.getElementById('main');
+const addUserButton = document.getElementById('add-user');
+const doubleMoneyButton = document.getElementById('double');
+const showMillionaireButton = document.getElementById('show-millionaires');
+const sort = document.getElementById('sort');
+const totalButton = document.getElementById('calculate-millionaires');
 
-// const videojs = document.querySelector('.video');
+let data = [];
 
-const video = document.getElementById('video');
-const  stop = document.getElementById('stop');
-// const pause = document.getElementById('pause');
-const play = document.getElementById('play');
-const progressBar = document.getElementById('progress');
-const volume = document.getElementById('volume');
-const fullScreen = document.getElementById('fullScreen')
-const volumeControls = document.getElementById('volume');
-
-
-
-// video quality controls
-// forward and backword 5 seconds
-// full screen function
-function toggleFullScreen(){
-    // video.classList.toggle('full');
-	if(video.requestFullScreen){
-		video.requestFullScreen();
-	} else if(video.webkitRequestFullScreen){
-		video.webkitRequestFullScreen();
-	} else if(video.mozRequestFullScreen){
-		video.mozRequestFullScreen();
-    }
-    // videojs.FullscreenToggle();
-}
-// 
-
-
-
-
-
-// Functions
-// 1- toggle video to play or pause the video
-// pause the video if playing 
-// play the video if paused
-function toggleVideo(){
-    if(video.paused){
-        video.play();
-    }else{
-        video.pause();
-    }
-}
-
-
-// 2- Update Icon
-
-function UpdateIcon(){
-    if(video.paused){
-        play.innerHTML = '<li class="fa fa-play fa-2x"></li>';
-    }else{
-        play.innerHTML = '<li class="fa fa-pause fa-2x"></li>';
-    }
+// initializing data Array to store random names
+async function generateRanomUsers(){
+   const resp = await fetch('https://randomuser.me/api');
+   const data = await resp.json();
+   const user = data.results[0];
+   const newUser  = {
+       name : `${user.name.first} ${user.name.last}`,
+       worth: Math.round(Math.random()*1000) 
+   }
+   addData(newUser);
+   updateDom();
 
 }
 
-// 3- update Progress bar and the position of the bar
-function updateProgress(){
-    progressBar.value = video.currentTime/video.duration*100;
-    // sepreting minutes only
-    let Minutes = Math.floor(video.currentTime / 60) ;
-    if(Minutes<10 ){
-        Minutes = `0${Minutes}`;
-    }
-    // sperating seconds 
-    let Seconds = Math.floor(video.currentTime % 60);
-    if(Seconds<10 ){
-        Seconds = `0${Seconds}`;
-    }
 
-    document.querySelector('.timestamp').innerHTML = `${Minutes}:${Seconds}`;
-    console.log(Seconds)
-
-
-
+// add Newly added user into the temp array
+function addData(newUser){
+    data.push(newUser);
 }
 
-// 4- stop the the video and reset to zero
-function stopVideo(){
-    video.pause();
-    video.currentTime =0;
-    UpdateIcon();
+function updateDom(inputData = data){
+
+    inputData.forEach(Items =>{
+        const  element = document.createElement('div');
+        element.classList.add('name');
+        element.innerHTML = `<strong>${Items.name}</strong>$ ${formateCurrency(Items.worth)}`;
+        main.appendChild(element);
+    })
 }
 
-// 5- setProgress change the video frames if progress bar has moved
+// format the currency in dollar function
 
-function setProgress(){
-   video.currentTime = progressBar.value * video.duration /100 ;
-
+function formateCurrency(convertToDollar){
+    return (convertToDollar).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');;
 }
 
-function volumeIconUpdate(){
-    if(video.muted==false){
-        volumeControls.innerHTML = '<i class="fas fa-volume-up fa-2x"></i>'; 
-    }else{
-        volumeControls.innerHTML = '<i class="fas fa-volume-mute fa-2x"></i>'; 
-
-    }
-}
-// volume controls Mute and Unmute
-function toggleVolume(){
-    if(video.muted){
-        video.muted = false;
-        volumeIconUpdate();
-    }else{
-        video.muted = true;
-        volumeIconUpdate();
-    }
+function doubleWorth(){
+    data = data.map(item =>{
+        return {...item, worth:item.worth *2}
+    });
 }
 
 
+// Listners for Button
+addUserButton.addEventListener('click',generateRanomUsers)
 
 
-// Event listeners
-// 1- Video Elementts - click to play and pause
-video.addEventListener('click',toggleVideo);
-// 2- Video Elements - pause to toggle play icon to pause icon
-video.addEventListener('pause',UpdateIcon);
-// 3- Video Elements -play to toggle pause icon back to play icon
-video.addEventListener('play',UpdateIcon);
-// 4- video Elements - update progress bar an timestamp
-video.addEventListener('timeupdate',updateProgress);
-// 5- play Button - click to play and pause the video
-play.addEventListener('click',toggleVideo);
-// 6- stop Button - click to stop the video
-stop.addEventListener('click',stopVideo);
-// 7- progress Bar - change position to change of playback
-progressBar.addEventListener('change',setProgress);
-fullScreen.addEventListener('click',toggleFullScreen);
-volumeControls.addEventListener('click',toggleVolume);
+// add double money Event listners
+// doubleMoneyButton.addEventListener('click',doubleWorth);
+
+
+
 
