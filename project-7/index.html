@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Classic Hangman </title>
+</head>
+<body>
+    <h1>Hangman</h1>
+    <p>  Can you gues the hidden word</p>
+    <div class="game-container">
+        <!-- plateform -->
+        <svg height="250px" width="250px" class="figure-contaienr">
+            <line x1="60" y1="20" x2="140" y2="20" ></line>
+            <line x1="140" y1="20" x2="140" y2="50" ></line>
+            <line x1="60" y1="20" x2="60" y2="230" ></line>
+            <line x1="20" y1="230" x2="100" y2="230" ></line>
+        <!-- Head of the Hangman -->
+        <circle cx="140" cy="70" r="20" class="hangman-part"></circle>
+        <!-- Body of te Hangman -->
+        <line x1="140" y1="90" x2="140" y2="150" class="hangman-part"></line>
+        <!-- Arms of Hangman -->    
+        <line x1="140" y1="120" x2="120" y2="100" class="hangman-part"></line>
+        <line x1="140" y1="120" x2="160" y2="100"class="hangman-part" ></line>
+         <!-- Legs of Hangman -->
+        <line x1="140" y1="150" x2="120" y2="180" class="hangman-part"></line>
+        <line x1="140" y1="150" x2="160" y2="180" class="hangman-part"></line>
+        </svg>
+        <!-- it will display wrongs letters enter -->
+        <div class="wrong-letters" id="wrong-letters">
+            <p>wrong Guesses </p>
+            <span>z, x ,y</span>
+        </div>
+        <div class="word" id="word">
+            <div class="letter">h</div>
+            <div class="letter">e</div>
+            <div class="letter">l</div>
+            <div class="letter">l</div>
+            <div class="letter">o</div>
+        </div>
+    </div>
+
+    <!-- continer for pup message : wind or Lose -->
+    <div class="popup-container" id="popup-container">
+        <div class="popup">
+            <h2 id="win-lose">
+                you Won!
+            </h2>
+            <button id="restart">Restart Game</button>
+        </div>
+    </div>
+
+    <!-- container for sliding Notifcations: Repeater letter inputs -->
+    <div class="slider-container" id="slider-container">
+        <p>you have already enter this letter</p>
+    </div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
+
+

@@ -7,9 +7,6 @@ const sort = document.getElementById('sort');
 const totalButton = document.getElementById('calculate-millionaires');
 
 let data = [];
-generateRanomUsers()
-
-
 
 // initializing data Array to store random names
 async function generateRanomUsers(){
@@ -21,7 +18,7 @@ async function generateRanomUsers(){
        worth: Math.round(Math.random()*1000) 
    }
    addData(newUser);
-
+   updateDom();
 
 }
 
@@ -29,7 +26,6 @@ async function generateRanomUsers(){
 // add Newly added user into the temp array
 function addData(newUser){
     data.push(newUser);
-    updateDom()
 }
 
 function updateDom(inputData = data){
@@ -48,29 +44,19 @@ function formateCurrency(convertToDollar){
     return (convertToDollar).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');;
 }
 
-// make the wort doble 
 function doubleWorth(){
     data = data.map(item =>{
-        return { ...item, worth: item.worth * 2}
+        return {...item, worth:item.worth *2}
     });
-    updateDom();
 }
-
-// sort the Richest
-function sortRichest(){
-    data.sort( (a,b) => a.worth - b.worth )
-    updateDom();
-}
-
 
 
 // Listners for Button
 addUserButton.addEventListener('click',generateRanomUsers)
-// Event listener to double the amount
-doubleMoneyButton.addEventListener('click',doubleWorth);
 
-// Eventlistner to sort the users
-sort.addEventListener('click',sortRichest);
+
+// add double money Event listners
+// doubleMoneyButton.addEventListener('click',doubleWorth);
 
 
 

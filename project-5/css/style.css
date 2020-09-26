@@ -42,8 +42,14 @@ button{
 }
 h2{
     border-bottom: 1px solid blue;
+
      display: flex; 
+
     justify-content: space-between; 
+
+}
+h2 strong{
+    padding-right: 60px;
 
 }
 
