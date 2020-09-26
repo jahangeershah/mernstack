@@ -4,12 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
     <title>Personal Blog landing page</title>
 </head>
-<body>
+<body>  
+    <nav>
+        <div class="logo"><img src="https://randomuser.me/api/portraits/men/3.jpg" alt="random images"></div>
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">course</a></li>
+            <li><a href="">Contact us</a></li>
+        </ul>
+    </nav>
+    <header>
+        <button class="toggle" id="toggle">
+            <i class="fa fa-bars fa-2x"></i>
+        </button>
+        <h1>Landing page</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, minima.</p>
+        <button class="apply" id="open">Apply Now</button>
+    </header>
+    <div class="container">
+        <h2>Offer som courses</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, blanditiis maxime sequi eligendi iure nulla soluta, fuga earum sit adipisci libero harum ex. Quod eum autem excepturi libero ut. Quidem.</p>
+    
+        <h2>More Information</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae explicabo quas voluptatum nisi sapiente facilis molestias inventore quibusdam error nam sunt, asperiores quasi sint rem odio quam atque magni quae.</p>
+        <h2>sallybus</h2>
+        <ul>
+            <li>Project-1</li>
+            <li>Project-2</li>
+            <li>Project-3</li>
+            <li>Project-4</li>
+        </ul>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium tempore ullam, veniam voluptas minus modi odio! Vero labore ullam deleniti nihil omnis iusto, debitis, fugit ea, dolorem magni et neque?</p>
+    </div>
 
-
+    <!-- Model Window -->
+    <div class="modal-container" id="modal">
+        <div class="modal">
+            <button class="close-btn" id="close">
+                <i class="fa fa-times"></i>
+            </button>
+            <div class="modal-header">
+                <h3>Apply</h3>
+            </div>
+            <div class="modal-content">
+                <p>to sing up for classes please submit this form</p>
+                <form action="" class="modal-form">
+                    <div>
+                        <label for="">Full Name</label>
+                        <input type="text" id="name" placeholder="full name" class="form-input">
+                    </div>
+                    <div>
+                        <label for="">Email</label>
+                        <input type="text" id="email" placeholder="email" class="form-input">
+                    </div>
+                    <div>
+                        <label for="">Password</label>
+                        <input type="password" id="password" placeholder="Enter your password" class="form-input">
+                    </div>
+                    <div>
+                        <label for="">confirm Password</label>
+                        <input type="password" id="password" placeholder="confirm your password" class="form-input">
+                    </div>
+                    <input type="submit" value="submit" class="submit-btn">
+                </form>
+            </div>
+        </div>
+    </div>
 
 
 
