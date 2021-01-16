@@ -13,4 +13,44 @@ var cardsArray = [
     { 'name': 'Wordpress', 'img': 'https://github.com/robgmerrill/img/blob/master/wordpress-logo.png?raw=true', },
 ];
 
-document.getElementById('#game-board');
+
+// cardsArray[0] , css
+// cardsArray[1].image 'imageURL
+// grapb the div wth id of game 
+
+// dublicate the Cards 
+var gameGraid = cardsArray.concat(cardsArray);
+
+
+// randomize game grid on each load
+gameGraid.sort(function() {
+    return 0.5 - Math.random();
+});
+
+// get div of the game board
+var game = document.getElementById('game-board');
+
+
+// create a section element and assign it to variable grid
+var grid = document.createElement('section');
+
+// Append the grid section
+grid.setAttribute('class', 'grid')
+
+// append grid section to the game-board div
+
+game.appendChild(grid);
+
+for (i = 0; i < gameGraid.length; i++) {
+    var card = document.createElement('div');
+
+    card.classList.add('card');
+
+    card.dataset.name = gameGraid[i].name;
+
+    card.style.backgroundImage = `url(${gameGraid[i].img})`;
+
+    grid.appendChild(card);
+}
+
+// Add event listner to grid
