@@ -1,119 +1,16 @@
-// stoage controller
+var cardsArray = [
+    { 'name': 'CSS', 'img': 'https://github.com/robgmerrill/img/blob/master/css3-logo.png?raw=true', },
+    { 'name': 'HTML', 'img': 'https://github.com/robgmerrill/img/blob/master/html5-logo.png?raw=true', },
+    { 'name': 'jQuery', 'img': 'https://github.com/robgmerrill/img/blob/master/jquery-logo.png?raw=true', },
+    { 'name': 'JS', 'img': 'https://github.com/robgmerrill/img/blob/master/js-logo.png?raw=true', },
+    { 'name': 'Node', 'img': 'https://github.com/robgmerrill/img/blob/master/nodejs-logo.png?raw=true', },
+    { 'name': 'Photo Shop', 'img': 'https://github.com/robgmerrill/img/blob/master/photoshop-logo.png?raw=true', },
+    { 'name': 'PHP', 'img': 'https://github.com/robgmerrill/img/blob/master/php-logo_1.png?raw=true', },
+    { 'name': 'Python', 'img': 'https://github.com/robgmerrill/img/blob/master/python-logo.png?raw=true', },
+    { 'name': 'Ruby', 'img': 'https://github.com/robgmerrill/img/blob/master/rails-logo.png?raw=true', },
+    { 'name': 'Sass', 'img': 'https://github.com/robgmerrill/img/blob/master/sass-logo.png?raw=true', },
+    { 'name': 'Sublime', 'img': 'https://github.com/robgmerrill/img/blob/master/sublime-logo.png?raw=true', },
+    { 'name': 'Wordpress', 'img': 'https://github.com/robgmerrill/img/blob/master/wordpress-logo.png?raw=true', },
+];
 
-
-// Item controller
-const ItemCtrl = (function() {
-    // Item constructor
-    const Item = function(id, name, caloires) {
-        this.id = id;
-        this.name = name;
-        this.calories = calories;
-
-    }
-
-    // Data Structure / State 
-    const data = {
-            items: [
-                { id: 1, name: 'steak Dinner', Calories: 1200 },
-                { id: 2, name: 'Cookie', Calories: 1400 },
-                { id: 3, name: 'Eggs', Calories: 400 }
-            ],
-            currentItem: null,
-            totalCalories: 0
-        }
-        // Public Methods
-    return {
-        getItems: function() {
-            return data.items;
-        },
-
-        logData: function() {
-            return data;
-        }
-    }
-
-})();
-
-
-
-// UI Controller
-const UICtrl = (function() {
-
-    const UISelectors = {
-            itemList: '#item-list',
-            addBtn: '.add-btn',
-            itemNameInput: '#item-name',
-            itemCaloriesInput: '#item-calories'
-        }
-        // Public Methods
-    return {
-        populateItemList: function(items) {
-            let html = '';
-
-            items.forEach(function(item) {
-                html += `<li class="collection-item" id="item-${item.id}">
-                <strong>${item.name}:</strong> <em>${item.Calories} Calories</em>
-                <a href="#" class="secondary-content">
-                    <i class=" edit-item fa fa-pencil"></i>
-                </a>
-            </li>`
-            });
-
-            // insert list items 
-            document.querySelector(UISelectors.itemList).innerHTML = html;
-        },
-        getSelectors: function() {
-            return UISelectors;
-        }
-    }
-})();
-
-
-
-
-
-// Ap Controller
-
-const App = (function(ItemCtr, UICtrl) {
-
-    // Load Event Listers
-    const loadEventListners = function() {
-            // Get UI Selectors
-            const UISelectors = UICtrl.getSelectors();
-
-            // Add Items Event
-            // document.querySelector(UISelectors.addBtn).addEventListener('click', itemAddSubmit);
-            document.querySelector('.add-btn').addEventListener('click', itemAddSubmit)
-        }
-        // add item submit
-    const itemAddSubmit = function(e) {
-            // console.log('Add');
-            // console.log('it works')
-            alert('hi')
-
-            e.preventDefault();
-        }
-        // console.log(ItemCtrl.logData())
-
-    //Public methods
-    return {
-        init: function() {
-            console.log('initializing App...');
-            // fetch data from data structure
-            const items = ItemCtr.getItems();
-            // console.log(items);
-
-            // Poplutate list with items
-            UICtrl.populateItemList(items);
-
-            // Load event listers 
-            loadEventListners();
-        }
-    }
-
-})(ItemCtrl, UICtrl);
-
-
-// Initializing app
-
-App.init();
+document.getElementById('#game-board');
