@@ -13,99 +13,110 @@ var cardsArray = [
     { 'name': 'Wordpress', 'img': 'https://github.com/robgmerrill/img/blob/master/wordpress-logo.png?raw=true', },
 ];
 
+// Duplicate cardsArray to create a match for each card
+var gameGrid = cardsArray.concat(cardsArray);
 
-// cardsArray[0] , css
-// cardsArray[1].image 'imageURL
-// grapb the div wth id of game 
-
-// dublicate the Cards 
-var gameGraid = cardsArray.concat(cardsArray);
-
-
-// randomize game grid on each load
-gameGraid.sort(function() {
+// Randomize game grid on each load
+gameGrid.sort(function() {
     return 0.5 - Math.random();
-});
+})
 
-// get div of the game board
+// Grab the div with an id of game-board and assign to a variable game
 var game = document.getElementById('game-board');
-
-
-// create a section element and assign it to variable grid
+// Create a section element and assign it to variable grid
 var grid = document.createElement('section');
-
-// Append the grid section
-grid.setAttribute('class', 'grid')
-
-// append grid section to the game-board div
-
+// Give section element a class of grid.
+grid.setAttribute('class', 'grid');
+// Append the grid section to the game-board div
 game.appendChild(grid);
 
-for (i = 0; i < gameGraid.length; i++) {
+// Loop through each item in our cards array
+for (i = 0; i < gameGrid.length; i++) {
+    // create a div element and assign to variable card
     var card = document.createElement('div');
-
+    // Apply a card class to that div
     card.classList.add('card');
+    // Set the data-name attribute of the div to the cardsArray name
+    card.dataset.name = gameGrid[i].name;
 
-    card.dataset.name = gameGraid[i].name;
+    // Create front of card
+    var front = document.createElement('div');
+    front.classList.add('front');
 
-    card.style.backgroundImage = `url(${gameGraid[i].img})`;
+    // Create back of card
+    var back = document.createElement('div');
+    back.classList.add('back');
+    back.style.backgroundImage = `url(${gameGrid[i].img})`;
 
+    // Append card to grid
     grid.appendChild(card);
+    card.appendChild(front);
+    card.appendChild(back);
 }
 
 var firstGuess = '';
 var secondGuess = '';
-
-
-// set count to 0
+// Set count to 0
 var count = 0;
-
-
+var previousTarget = null;
+var delay = 1200;
 
 // Add match CSS
 var match = function() {
-    var selected = document.querySelectorAll('selected')
-
-    // loop through the array object contain selected class
+    var selected = document.querySelectorAll('.selected');
+    // loop through the array like object containing `selected` class
     for (i = 0; i < selected.length; i++) {
-        selected[i].classList.add('match')
+        selected[i].classList.add('match');
     }
+};
 
-}
+// Reset guesses after two attempts
+var resetGuesses = function() {
+    firstGuess = '';
+    secondGuess = '';
+    count = 0;
+    previousTarget = null;
 
-// Add event listner to grid
+    var selected = document.querySelectorAll('.selected');
+    for (i = 0; i < selected.length; i++) {
+        selected[i].classList.remove('selected');
+    }
+};
+
+
+// Add event listener to grid
 grid.addEventListener('click', function(event) {
-    // declare variable to target our clicked item
-
+    // Declare variable to target our clicked item
     var clicked = event.target;
-
-    // removing if the user click between two boxes
-    if (clicked.nodeName == 'SECTION') {
+    // Do not allow the grid section itself to be selected;
+    // only select divs inside the grid
+    if (clicked.nodeName === 'SECTION' || clicked === previousTarget || clicked.parentNode.classList.contains('match') || clicked.parentNode.classList.contains('selected')) {
         return;
     }
-
-    // we only want to add selecte class if the current count is less than 2
+    // We only want to add `selected` class if the current count is less than 2
     if (count < 2) {
         count++;
 
-        if (count == 1) {
-            firstGuess = clicked.dataset.name;
-            clicked.classList.add('selected');
+        if (count === 1) {
+            // Assign first guess
+            firstGuess = clicked.parentNode.dataset.name;
+            clicked.parentNode.classList.add('selected');
         } else {
-            // add selected class
-            secondGuess = clicked.dataset.name;
-            clicked.classList.add('selected');
+            // Assign second guess
+            secondGuess = clicked.parentNode.dataset.name;
+            clicked.parentNode.classList.add('selected');
         }
-
+        // If both guesses are not empty
         if (firstGuess !== '' && secondGuess !== '') {
-
-            // add the firstGuess matches secondGuess
-            if (firstGuess == secondGuess) {
-                match();
+            // And the firstGuess matches secondGuess
+            if (firstGuess === secondGuess) {
+                // Run the match function
+                setTimeout(match, delay);
+                setTimeout(resetGuesses, delay);
+            } else {
+                setTimeout(resetGuesses, delay);
             }
         }
+        previousTarget = clicked;
     }
-
-
-
-})
+});
