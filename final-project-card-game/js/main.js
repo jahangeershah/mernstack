@@ -94,7 +94,7 @@ grid.addEventListener('click', function(event) {
         } else {
             // add selected class
             secondGuess = clicked.dataset.name;
-            clicked.classList.add('selected')
+            clicked.classList.add('selected');
         }
 
         if (firstGuess !== '' && secondGuess !== '') {
