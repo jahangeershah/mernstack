@@ -53,4 +53,59 @@ for (i = 0; i < gameGraid.length; i++) {
     grid.appendChild(card);
 }
 
+var firstGuess = '';
+var secondGuess = '';
+
+
+// set count to 0
+var count = 0;
+
+
+
+// Add match CSS
+var match = function() {
+    var selected = document.querySelectorAll('selected')
+
+    // loop through the array object contain selected class
+    for (i = 0; i < selected.length; i++) {
+        selected[i].classList.add('match')
+    }
+
+}
+
 // Add event listner to grid
+grid.addEventListener('click', function(event) {
+    // declare variable to target our clicked item
+
+    var clicked = event.target;
+
+    // removing if the user click between two boxes
+    if (clicked.nodeName == 'SECTION') {
+        return;
+    }
+
+    // we only want to add selecte class if the current count is less than 2
+    if (count < 2) {
+        count++;
+
+        if (count == 1) {
+            firstGuess = clicked.dataset.name;
+            clicked.classList.add('selected');
+        } else {
+            // add selected class
+            secondGuess = clicked.dataset.name;
+            clicked.classList.add('selected')
+        }
+
+        if (firstGuess !== '' && secondGuess !== '') {
+
+            // add the firstGuess matches secondGuess
+            if (firstGuess == secondGuess) {
+                match();
+            }
+        }
+    }
+
+
+
+})
