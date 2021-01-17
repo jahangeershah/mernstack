@@ -13,8 +13,9 @@ h3 {
     text-align: center;
 }
 
-button {
+#btn-home {
     justify-items: center;
+    color: green;
 }
 
 p {
