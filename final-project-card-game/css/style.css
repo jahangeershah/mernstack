@@ -13,6 +13,10 @@ h3 {
     text-align: center;
 }
 
+button {
+    justify-items: center;
+}
+
 p {
     text-align: center;
 }
